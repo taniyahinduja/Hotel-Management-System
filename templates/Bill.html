@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<h3>Total Bill</h3>
+<div class="display">
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Service Name</th>
+      <th scope="col">Cost</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for objct in data %}
+    <tr>
+        {% for obj in objct %}
+        <td>
+            {{obj}}
+        </td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    <tr>
+        <td>
+            Total
+        </td>
+        <td>
+            {{value}}
+        </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note: The Bill is inclusive of ordered food and accomodation charges.</p>
+</div>
+
+
+
+{% endblock %}

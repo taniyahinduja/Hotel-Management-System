@@ -1,0 +1,103 @@
+ /* http://127.0.0.1:5000/ */
+
+body{
+  background-color: #eaf6f6;
+ font-family: 'Ubuntu', sans-serif;
+ text-align: center;
+}
+
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2{
+  margin: 0.5rem;
+  /*font-family: 'Norican', cursive;*/
+  font-size: 2rem;
+}
+
+h3{
+  margin: 4rem;
+}
+
+/* Home Page */
+.navbar{
+  height: 5rem;
+  background-color: #f76b8a;
+}
+
+.nav-link{
+  color: #fff;
+  padding: 1.5rem;
+  margin: 2.5px;
+  font-size: 1.15rem;
+}
+
+.nav-link:hover{
+  color: #fff;
+}
+
+.navbar-brand{
+  color: #fff;
+  font-family: 'Norican', cursive;
+  font-weight: bold;
+  font-size: 3rem;
+}
+.navbar-brand:hover{
+  color: #fff;
+}
+
+.dropdown{
+margin-right: 0.5rem;
+}
+
+.top-div{
+  margin: 0 5rem;
+}
+
+.bottom-div{
+  height: 3rem;
+  background-color: #2d6187;
+  color: #fff;
+  font-size: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.carousel-item,.carousel{
+  height: 30rem;
+  width: 40rem;
+}
+
+.carousel{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.create-user,.update-user{
+  margin: 2rem 8rem;
+}
+
+.id-center{
+  margin: 0 20rem;
+}
+
+.create-service,.create-room,.create-food{
+  margin: 2rem 15rem;
+}
+
+.delete{
+  margin: 3rem 20rem;
+}
+
+.display{
+  margin: 0 2rem 2rem 2rem;
+}
+
+.display-food{
+  margin: 0 6rem 2rem 6rem;
+}

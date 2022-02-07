@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% block content %}
+<h3>Available Services</h3>
+<div class="display">
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Service ID</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Service Name</th>
+      <th scope="col">Cost</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for object in data %}
+    <tr>
+        {% for obj in object %}
+        <td>
+            {{ obj }}
+        </td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<h3>Upgrade Services</h3>
+<form method="POST">
+  <div class="create-service">
+    <label for="ServiceID">Service ID</label>
+    <input type="text" name="ServiceID">
+    <div class="form-group">
+      <label for="ID">Customer ID</label>
+      <input class="form-control" type="text" name="ID" placeholder="Customer ID">
+    </div>
+    <div class="form-group">
+        <label for="Service">Service Name</label>
+      <input class="form-control" type="text" name="Service" placeholder="Service">
+      <div class="form-group">
+          <label for="Cost">Cost</label>
+        <input class="form-control" type="text" name="Cost" placeholder="Cost">
+      </div>
+    <input class="btn btn-dark" type="submit" name="Upgrade Service" value="Upgrade Service">
+    </div>
+</form>
+{% endblock %}

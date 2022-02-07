@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% block content %}
+<h3>Orders</h3>
+<div class="display-food">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      
+      <th scope="col">Food Item</th>
+      <th scope="col">Cost</th>
+      <th scope="col">Ordered By</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for object in data %}
+    <tr>
+        {% for obj in object %}
+        <td>
+            {{ obj }}
+        </td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<h3>Update orders</h3>
+<div class="create-food">
+  <form method="POST">
+
+    <div class="form-group">
+      <label for="ItemName">Food Item</label>
+      <input class="form-control" type="text" name="ItemName" placeholder="Food Item">
+    </div>
+
+    <div class="form-group">
+    <label for="Cost">Cost</label>
+      <input class="form-control" type="text" name="Cost" placeholder="Cost">
+    </div>
+
+
+
+      <input class="btn btn-dark" type="submit" name="Update" value="Update">
+  </form>
+</div>
+{% endblock %}

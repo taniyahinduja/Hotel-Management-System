@@ -1,0 +1,96 @@
+ <!-- http://127.0.0.1:5000/  -->
+
+
+ <!DOCTYPE html>
+ <html>
+
+ <head>
+   <title>
+     Hotel
+   </title>
+ </head>
+
+ <!-- Bootstrap CSS Link -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+ <!-- CSS Styles -->
+ <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+ <!-- Bootstrap Javascript -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Norican&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Norican&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+
+ <body>
+   <nav class="navbar navbar-expand-lg">
+     <a class="navbar-brand" href="/">Mi Casa</a>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav ml-auto">
+
+
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Customers
+           </a>
+           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <a class="dropdown-item" href="{{ url_for('create_user') }}">New Customer</a>
+             <a class="dropdown-item" href="{{ url_for('retrieve_with_room') }}">Users With Occupied Rooms</a>
+             <a class="dropdown-item" href="{{ url_for('retrieve_all') }}">All Users</a>
+             <a class="dropdown-item" href="{{ url_for('update_user') }}">Update Information</a>
+             <a class="dropdown-item" href="{{ url_for('delete_user') }}">Delete</a>
+           </div>
+         </li>
+
+
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Services
+           </a>
+           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <a class="dropdown-item" href="{{ url_for('create_services') }}">Add Service</a>
+             <a class="dropdown-item" href="{{ url_for('retrieve_services') }}">Show Services</a>
+             <a class="dropdown-item" href="{{ url_for('delete_service') }}">Cancel Service</a>
+             <a class="dropdown-item" href="{{ url_for('update_services') }}">Upgrade Service</a>
+           </div>
+         </li>
+
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Rooms
+           </a>
+           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <a class="dropdown-item" href="{{ url_for('create_room') }}">Assign Room</a>
+             <a class="dropdown-item" href="{{ url_for('retrieve_rooms') }}">Occupied Rooms</a>
+             <a class="dropdown-item" href="{{ url_for('update_rooms') }}">Upgrade Room</a>
+             <a class="dropdown-item" href="{{ url_for('delete_rooms') }}">Vacate Room</a>
+           </div>
+         </li>
+
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Dining
+           </a>
+           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <a class="dropdown-item" href="{{ url_for('create_food') }}">Add food item</a>
+             <a class="dropdown-item" href="{{ url_for('retrieve_menu') }}">Orders</a>
+             <a class="dropdown-item" href="{{ url_for('update_food') }}">Update orders</a>
+             <a class="dropdown-item" href="{{ url_for('delete_food') }}">Remove food Item</a>
+           </div>
+         </li>
+     </ul>
+     </div>
+   </nav>
+   <!-- <h1 style="text-align: center"><a href="{{ url_for('options') }}">Options</a></h1> -->
+   <div style="text-align: center; padding-top: 2.5rem; padding-bottom:2.5rem;">
+     {% block content %}
+     <!--Whatever-->
+     {% endblock %}
+   </div>
+<div class="bottom-div">
+  <p>©️Aishwarya️©️Taniya©️Sanika©️Rupali</p>
+</div>
+ </body>
+ </html>

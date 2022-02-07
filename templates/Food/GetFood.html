@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block content %}
+
+    <h3>Orders</h3>
+    <div class="display-food">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+    
+          <th scope="col">Food Item</th>
+          <th scope="col">Cost</th>
+          <th scope="col">Ordered By</th>
+          
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for object in data %}
+        <tr>
+            {% for obj in object %}
+            <td>
+                {{ obj }}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+
+{% endblock %}

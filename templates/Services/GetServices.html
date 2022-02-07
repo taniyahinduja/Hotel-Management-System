@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h3>Available Services</h3>
+<div class="display">
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Service ID</th>
+          <th scope="col">User ID</th>
+          <th scope="col">Service Name</th>
+          <th scope="col">Cost</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for object in data %}
+        <tr>
+            {% for obj in object %}
+            <td>
+                {{ obj }}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block content %}
+<h3>Menu</h3>
+<div class="display-food">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      
+      <th scope="col">Food Item</th>
+      <th scope="col">Cost</th>
+      <th scope="col">Ordered By</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for object in data %}
+    <tr>
+        {% for obj in object %}
+        <td>
+            {{ obj }}
+        </td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<h3>Remove Item</h3>
+<form method="POST">
+    <div class="form-group  delete ">
+    <label for="OrderedBy">Ordered By</label>
+    <input class="form-control" type="text" name="OrderedBy"placeholder="ID">
+    </div>
+    <input class="btn btn-dark" type="submit" name="Remove" value="Remove">
+</form>
+{% endblock %}

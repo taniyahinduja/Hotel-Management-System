@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% block content %}
+
+    <h3>Customer Data</h3>
+<div class="display">
+
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Staff Status</th>
+          <th scope="col">Name</th>
+          <th scope="col">Surname</th>
+          <th scope="col">Address</th>
+          <th scope="col">Contact Number</th>
+          <th scope="col">Email</th>
+          <th scope="col">Total Amount</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for object in data %}
+        <tr>
+            {% for obj in object %}
+            <td>
+                {% if obj == 0 %}
+                    Not applicable
+                {% elif obj == 1 %}
+                    Yes
+                {% else %}
+                    {{ obj }}
+                {% endif %}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+{% endblock %}
