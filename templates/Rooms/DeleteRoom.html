@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% block content %}
+<h3>Occupied Rooms</h3>
+<div class="display">
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Room Number</th>
+      <th scope="col">Room Type</th>
+      <th scope="col">Services</th>
+      <th scope="col">User ID</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for object in data %}
+    <tr>
+        {% for obj in object %}
+        <td>
+            {% if obj == 0 %}
+                No
+            {% elif obj == 1 %}
+                Yes
+            {% else %}
+                {{ obj }}
+            {% endif %}
+        </td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+    <h3>Vacate Room</h3>
+      <div class="create-room">
+    <form method="POST">
+      <div class="from-row">
+        <div class="form-group">
+          <label  for="RoomNo">Room Number</label>
+          <input class="form-control" type="text" name="RoomNo" placeholder="Room number">
+        </div>
+      </div>
+
+
+        <input class="btn btn-dark" type="submit" name="Vacate" value="Vacate">
+    </form>
+    </div>
+{% endblock %}

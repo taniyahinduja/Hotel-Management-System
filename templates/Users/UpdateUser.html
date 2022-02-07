@@ -1,0 +1,101 @@
+{% extends 'index.html' %}
+{% block content %}
+<h3>Customer Data</h3>
+<div class="display">
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Staff Status</th>
+      <th scope="col">Name</th>
+      <th scope="col">Surname</th>
+      <th scope="col">Address</th>
+      <th scope="col">Contact Number</th>
+      <th scope="col">Email</th>
+      <th scope="col">Total Amount</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for object in data %}
+    <tr>
+        {% for obj in object %}
+        <td>
+            {% if obj == 0 %}
+                Not applicable
+            {% elif obj == 1 %}
+                Yes
+            {% else %}
+                {{ obj }}
+            {% endif %}
+        </td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+<h3>Update Customer Information</h3>
+
+<div class="update-user">
+  <form method="POST">
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label class="id-center" for="ID">ID</label>
+        <input class="form-control id-center" type="text" name="ID" placeholder="Customer ID">
+      </div>
+    </div>
+
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" name="Name" placeholder="First Name">
+      </div>
+
+
+    <div class="form-group col-md-6">
+      <label for="LastName">Last Name</label>
+      <input type="text" class="form-control" name="LastName" placeholder="Last Name">
+    </div>
+    </div>
+
+  <div class="form-group">
+   <label for="Address">Address</label>
+   <input type="text" class="form-control" name="Address" placeholder="Address">
+  </div>
+
+  <div class="form group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="Staff">
+        <label class="form-check-label" for="Staff">Is staff?</label>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="Number">Number</label>
+      <input type="text" class="form-control" name="Number" placeholder="Contact Number">
+    </div>
+
+
+    <div class="form-group col-md-6">
+      <label for="Email">Email</label>
+      <input type="email" class="form-control" name="Email" placeholder="Email">
+    </div>
+  </div>
+
+
+      <input class="btn btn-dark" type="submit" name="Update Info" value="Update Info">
+  </form>
+</div>
+
+
+
+
+{% endblock %}

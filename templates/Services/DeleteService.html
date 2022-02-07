@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{% block content %}
+<h3>Available Services</h3>
+<div class="display">
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Service ID</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Service Name</th>
+      <th scope="col">Cost</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for object in data %}
+    <tr>
+        {% for obj in object %}
+        <td>
+            {{ obj }}
+        </td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+<h3>Remove Service</h3>
+<form method="POST">
+  <div class="form-group  delete ">
+    <label for="ID">Service ID</label>
+    <input class="form-control" type="text" name="ID" placeholder="Service ID">
+  </div>
+<input class="btn btn-dark" type="submit" name="Cancel Service" value="Cancel Service">
+</form>
+
+{% endblock %}

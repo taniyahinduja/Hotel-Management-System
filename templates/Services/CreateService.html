@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<h3>Add Service</h3>
+<form method="POST">
+
+<div class="create-service">
+  <div class="form-group">
+    <label for="ID">Customer ID</label>
+    <input class="form-control" type="text" name="ID" placeholder="Customer ID">
+  </div>
+
+  <div class="form-group">
+      <label for="Service">Service Name</label>
+    <input class="form-control" type="text" name="Service" placeholder="Service">
+  </div>
+
+  <div class="form-group">
+      <label for="Cost">Cost</label>
+    <input class="form-control" type="text" name="Cost" placeholder="Cost">
+  </div>
+
+   <input class="btn btn-dark" type="submit" name="AddService" value="Add Service">
+   </div>
+</form>
+
+
+
+{% endblock %}

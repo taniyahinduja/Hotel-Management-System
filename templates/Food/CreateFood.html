@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<!-- <div class="form-group">
+  <label for="RoomNo">Room Number</label>
+  <input class="form-control" type="text" name="RoomNo" placeholder="Room No.">
+</div> -->
+<h3>Add Item</h3>
+<div class="create-food">
+  <form method="POST">
+    <div class="form-group">
+      <label for="OrderedBy">Ordered By</label>
+      <input class="form-control" type="text" name="OrderedBy" placeholder="ID">
+    </div>
+
+    <div class="form-group">
+      <label for="ItemName">Food Item</label>
+      <input class="form-control" type="text" name="ItemName" placeholder="Food Item">
+    </div>
+
+    <div class="form-group">
+    <label for="Cost">Cost</label>
+      <input class="form-control" type="text" name="Cost" placeholder="Cost">
+    </div>
+
+
+
+      <input class="btn btn-dark" type="submit" name="Add" value="Add">
+  </form>
+</div>
+
+
+{% endblock %}
